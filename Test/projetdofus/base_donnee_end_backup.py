@@ -1145,11 +1145,11 @@ bucheron = {
 
 
 
-icone = Image.open("icone_new.png")
-uppech =  Image.open("uppecheur.png")
-textup = Image.open("uppecheur190.png")
-imagelvlup = Image.open("lvlup.png")
-emoticonedofus = Image.open("emoticonedofus1.png")
+icone = Image.open(APP_DIR / "icone_new.png")
+uppech =  Image.open(APP_DIR / "uppecheur.png")
+textup = Image.open(APP_DIR / "uppecheur190.png")
+imagelvlup = Image.open(APP_DIR / "lvlup.png")
+emoticonedofus = Image.open(APP_DIR / "emoticonedofus1.png")
 
 
 app_mode = st.sidebar.selectbox('Sélectionne la page :', ['Menu', 'Optimiseur', 'Simulateur'])
@@ -1405,4 +1405,5 @@ if app_mode == 'Simulateur':
     recap= pd.DataFrame(list(recap.items()), columns=["Détail", "Valeurs"]) 
 
     st.dataframe(recap)
+
 
