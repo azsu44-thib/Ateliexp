@@ -1,4 +1,8 @@
-streamlit
-tqdm
+streamlit>=1.36
+tqdm>=4.66
 pandas
-Pillows
+numpy
+requests
+Pillow
+openpyxl
+
