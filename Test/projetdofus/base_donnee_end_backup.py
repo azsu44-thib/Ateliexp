@@ -13,14 +13,19 @@ from PIL import Image
 
 ICON_PATH = Path(__file__).parent / "icone_new.png"
 icone = Image.open(ICON_PATH)
-UPPECH_PATH = Path(__file__).parent/ "uppecheur.png"
-uppech =  Image.open("uppecheur.png")
-TEXTUP_PATH = Path(__file__).parent/ "uppecheur190.png"
-textup = Image.open("uppecheur190.png")
-IMAGELVLUP_PATH = Path(__file__).parent/ "lvlup.png"
-imagelvlup = Image.open("lvlup.png")
-EMOTICONEDOFUS_PATH = Path(__file__).parent/ "emoticonedofus1.png"
-emoticonedofus = Image.open("emoticonedofus1.png")
+
+UPPECH_PATH = Path(__file__).parent / "uppecheur.png"
+uppech = Image.open(UPPECH_PATH)
+
+TEXTUP_PATH = Path(__file__).parent / "uppecheur190.png"
+textup = Image.open(TEXTUP_PATH)
+
+IMAGELVLUP_PATH = Path(__file__).parent / "lvlup.png"
+imagelvlup = Image.open(IMAGELVLUP_PATH)
+
+EMOTICONEDOFUS_PATH = Path(__file__).parent / "emoticonedofus1.png"
+emoticonedofus = Image.open(EMOTICONEDOFUS_PATH)
+
 
 
 chasseur = {
@@ -1400,3 +1405,4 @@ if app_mode == 'Simulateur':
     recap= pd.DataFrame(list(recap.items()), columns=["Détail", "Valeurs"]) 
 
     st.dataframe(recap)
+
