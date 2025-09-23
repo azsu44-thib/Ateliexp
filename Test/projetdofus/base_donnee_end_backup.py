@@ -8,6 +8,20 @@ import streamlit as st
 import pandas as pd 
 from PIL import Image
 
+from pathlib import Path
+from PIL import Image
+
+ICON_PATH = Path(__file__).parent / "icone_new.png"
+icone = Image.open(ICON_PATH)
+UPPECH_PATH = Path(__file__).parent/ "uppecheur.png"
+uppech =  Image.open("uppecheur.png")
+TEXTUP_PATH = Path(__file__).parent/ "uppecheur190.png"
+textup = Image.open("uppecheur190.png")
+IMAGELVLUP_PATH = Path(__file__).parent/ "lvlup.png"
+imagelvlup = Image.open("lvlup.png")
+EMOTICONEDOFUS_PATH = Path(__file__).parent/ "emoticonedofus1.png"
+emoticonedofus = Image.open("emoticonedofus1.png")
+
 
 chasseur = {
 
@@ -1384,4 +1398,5 @@ if app_mode == 'Simulateur':
     st.markdown("Récapitulatif :")
     recap = {"Niveau de départ" : niv_depart, "Nombre de niveau(x) gagné(s)" : lvl_gagnes, "Niveau atteint" : niv_actuel, "Experience gagnée" : total_exp}
     recap= pd.DataFrame(list(recap.items()), columns=["Détail", "Valeurs"]) 
+
     st.dataframe(recap)
