@@ -1151,23 +1151,23 @@ if app_mode == 'Menu':
      col1, col2, col3 = st.columns([1,2,1])
      with col2 :
           st.image(icone)
-     st.title("Bienvenue sur le site 'L'Ateliexp', ton simulateur et optimisateur de leveling métier DOFUS !")
+     st.title("Bienvenue sur L'Ateliexp, ton simulateur et optimisateur de leveling métier DOFUS !")
      st.markdown("À quoi ça sert ?")
      st.write("Ce site référence des outils te permettant de mieux préparer ta montée de niveau de métier. Tu pourras économiser du temps. Et comme il se dit en Amakna, le temps c'est des Kamas !")
      st.markdown("L'Optimisateur :")
-     st.write("Tu souhaites optimiser ton leveling à moindre coût ? Tu peux utiliser le Simulateur. Il suffira d'entrer ton niveau actuel et le niveau que tu souhaites atteindre pour obtenir une liste des objets nécessaire, ainsi que les ressources à prévoir pour les réaliser. Tu optimise ton temps, et tes dépenses. Les objets proposés ont étés séléctionnés pour être réalisable facilement, avec des ressources récoltables. Ainsi, que tu souhaites tout acheter en HDV, ou préparer minutieusement ton leveling avec ton farm, la solution se trouve ici.") 
+     st.write("Tu souhaites optimiser ton leveling à moindre coût ? Tu peux utiliser le Simulateur. Il suffira d'entrer ton niveau actuel et le niveau que tu souhaites atteindre pour obtenir une liste des objets nécessaires, ainsi que les ressources à prévoir pour les réaliser. Tu optimises ton temps, et tes dépenses. Les objets proposés ont été séléctionnés pour être réalisables facilement, avec des ressources récoltables. Ainsi, que tu souhaites tout acheter en HDV, ou préparer minutieusement ton leveling avec ton farm, la solution se trouve ici.") 
      col4, col5, col6 = st.columns([1,3,1])
      with col5:
         st.image(uppech, width= 350)
 
      st.markdown("Le Simulateur :")
-     st.write("Tu es plutôt borné ou possédant une banque qui déborde déjà de ressource ? Cet outil te permettra de connaître l'xp donnée pour la réalisation d'un craft précis et d'une quantité précise. Ou au contraire, tu peux également calculer la quantité exact d'un seul et même craft il te faudrait réaliser pour atteindre le niveau souhaité !")
+     st.write("Tu es plutôt borné ou possédant une banque qui déborde déjà de ressources ? Cet outil te permettra de connaître l'xp donnée pour la réalisation d'un craft précis et d'une quantité précise. Ou au contraire, tu peux également calculer la quantité exacte d'un seul et même craft qu'il te faudrait réaliser pour atteindre le niveau souhaité !")
      col7, col8, col9 = st.columns([1,2,1])
      with col8 :
         st.image(textup)
      st.markdown("Il existe déjà des outils similaires, non ?")   
-     st.write("Tu as tout à fait raison ! De superbes outils existent déjà en ligne. J'ai réalisé cet outil avec la volonté d'apprendre à coder. DOFUS étant mon jeu de coeur, je me suis dis qu'il pourrait apporter quelque chose de nouveau. Cet outil se veut facile et rapide à utiliser. Il permet également de donner une liste précise, et pas seulement par tranche de 10 ou 20 niveaux.")
-     st.info("🔎 Information : Je suis encore débutant dans la programmation, alors n'hésites pas à proposer des améliorations ou des critiques à ce sujet, toutes idées ou conseils sont bons à prendre !. Le site et la base de donnée que je fais par moi-même évoluerons au fil du temps.")
+     st.write("Tu as tout à fait raison ! De superbes outils existent déjà en ligne. J'ai réalisé cet outil avec la volonté d'apprendre à coder. Il se veut facile et rapide d'utilisation. Il permet également de donner une liste précise, et pas seulement par tranche de 10 ou 20 niveaux.")
+    
 
 
 if app_mode == 'Optimiseur':
@@ -1229,11 +1229,11 @@ if app_mode == 'Optimiseur':
                     niv_plafond = add_plafond + niv_objet
 
             else:
-                    add_plafond = 10 #Les autres objets se débloques à chaque paliers +10 atteint
+                    add_plafond = 10 #Les autres objets se débloquent à chaque paliers +10 atteint
                     niv_plafond = add_plafond + niv_objet
         
             if niv_objet <= niv_actuel and niv_plafond > niv_actuel: #On prend l'objet faisable (niv de création inferieur ou egal au niv du joueur) 
-                                                                #et on exclus les recettes non optimisées (tout ce qui est a plus de 9 niveau par rapport au joueur, les nouveau objets se débloquent tous les 10niv
+                                                                #et on exclut les recettes non optimisées (tout ce qui est a plus de 9 niveau par rapport au joueur, les nouveau objets se débloquent tous les 10niv
                 xp_craft = (selec_metier[obj]["Experience"]) #Récupération de la valeur xp de l'objet
                 if niv_actuel == niv_objet : #Si le joueur a le niveau de l'objet, pas de malus
                     xp_variable = xp_craft
@@ -1249,7 +1249,7 @@ if app_mode == 'Optimiseur':
                 objet_a_creer = obj
                 nb_objet = exp_lvl_up / xp_variable_int #Calcul du nombre d'objet à faire par rapport à l'xp de l'objet et l'xp requise
                 nb_objet_int = ceil(nb_objet) #On arrondi au superieur le nombre d'objet à créer
-                objet_craft.append([objet_a_creer , nb_objet_int])              #On fait un historique de niveau dans la boucle, incluant l'objet et la quantité pour chaque niveau
+                objet_craft.append([objet_a_creer , nb_objet_int])              #Historique de niveau dans la boucle, incluant l'objet et la quantité pour chaque niveau
                 depassement_xp = ((nb_objet_int * xp_variable_int) - exp_lvl_up) #Calcule du dépassement de l'experience gagnée par rapport a ce qui est requis
         excedent_xp = depassement_xp                                                    #Stock le resultat afin de le déduire de l'xp necessaire au prochain niveau
         liste_operation[niv_supp] = objet_craft  #On ajoute la liste émise par la boucle afin de conserver un historique de chaque niveau 
@@ -1274,14 +1274,6 @@ if app_mode == 'Optimiseur':
 
 
 
-
-    print("\n", "\n")
-    print("Pour passer du niveau :\n", "------------>", niv_depart, "\n" "au niveau :\n", "----------->", niv_rush)
-    print("Vous devez fabriquer les objets suivants :\n")
-
-    for i in nom_tri:
-        print("          -", (i), "x", nom_tri[i], "\n")
-
     column_names = ['Item(s)', 'Quantité']
     dfnom_tri = pd.DataFrame(list(nom_tri.items()), columns=column_names)
 
@@ -1296,12 +1288,6 @@ if app_mode == 'Optimiseur':
     dfqtt_ressource_def = pd.DataFrame(list(qtt_ressource_def.items()), columns=["Ressource(s)", "Quantité"])          
 
 
-    print("\nListe des ressources à prévoir pour réaliser la totalité des crafts\n")
-    for ingredient, total in qtt_ressource_def.items():
-        print(f" - {ingredient} x {total}")
-     
-
-
 
     st.subheader("Liste des objets à réaliser 🛠️ : ")
     st.dataframe(dfnom_tri)
@@ -1309,7 +1295,7 @@ if app_mode == 'Optimiseur':
     st.subheader("Liste des ressources à prévoir pour réaliser ces objets 📋:")
     st.dataframe(dfqtt_ressource_def)
 
-    st.info("🔎 Information : Le simulateur part du principe que ton niveau actuel est à 0%, si ce n'est pas la cas, il se peut que le niveau à atteindre soit légèrement dépassé.")     
+    st.info("🔎 Information : L'optimisateur part du principe que ton niveau actuel est à 0%, si ce n'est pas la cas, il se peut que le niveau à atteindre soit légèrement dépassé.")     
 
 if app_mode == 'Simulateur':
 
@@ -1326,7 +1312,7 @@ if app_mode == 'Simulateur':
     niv_depart = st.number_input('Sélectionne ton niveau actuel : ', 1, 199)
 
 
-    if numero_metier == 'Chasseur 🥩':
+    if numero_metier == 'Chasseur 🥩':  #sélection du dictionnaire 
      selec_metier = chasseur
     elif numero_metier == 'Pêcheur 🎣':
      selec_metier = pecheur
@@ -1341,7 +1327,7 @@ if app_mode == 'Simulateur':
 
     objet = []
 
-    for items in selec_metier:
+    for items in selec_metier:       #Filtration des objets apparaissant dans le menu déroulant en fonction du niveau du joueur pour éviter toute erreur d'entrée
        filtre_objet = selec_metier[items]['Niveau']
        if niv_depart >= filtre_objet:
           objet.append(items)
@@ -1361,15 +1347,15 @@ if app_mode == 'Simulateur':
        xp = selec_metier[select_objet]['Experience']
        lvl_objet = selec_metier[select_objet]['Niveau'] 
        if lvl_objet < 1 :
-          diff_lvl_rec = niv_actuel - (lvl_objet + 1)
+          diff_lvl_rec = niv_actuel - (lvl_objet + 1) #Ajout d'une condition pour calculer le malus correctement, les objets étant entré niveau 0 dans le dictionnaire, le joueur ne pouvant être niveau <1 
        else :
           diff_lvl_rec = niv_actuel - lvl_objet
 
        xp_variable = xp / (1 + 0.1* pow(diff_lvl_rec, 1.1))
        xp_variable_def = int(xp_variable)
        exp_lvl_up = exp_lvl_up - xp_variable_def
-       total_exp += xp_variable_def
-       if exp_lvl_up <= 0:
+       total_exp += xp_variable_def    #Conservation de l'experience accumulée
+       if exp_lvl_up <= 0:   #Conservation du "passage de niveau", si l'experience gagnée dépasse l'experience nécessaire, sauvegarde du reliquat, augmentation de niveau, calcule de l'experience nécessaire au prochain niveau auquel on déduit le reliquat
           niv_actuel += 1
           niv_supp += 1
           residu_exp = abs(exp_lvl_up)
@@ -1379,10 +1365,10 @@ if app_mode == 'Simulateur':
         
 
     st.subheader('Tu gagnes un total de :')
-    st.subheader(f"{total_exp} Points d'EXP")
+    st.subheader(f"{total_exp} Points d'EXP") #Affichage de la variable sur l'UI
 
     lvl_gagnes = niv_actuel - niv_depart
-    if lvl_gagnes > 0 :
+    if lvl_gagnes > 0 :  #Affichage d'une image en fonction du passage de niveau ou non
        st.markdown(f"Avec ces crafts, tu gagnerais {lvl_gagnes} niveau(x) et tu passerais au niveau {niv_actuel} ! ")
        col1, col2, col3 = st.columns([1,2,1])
        with col2:
@@ -1393,11 +1379,12 @@ if app_mode == 'Simulateur':
        with col2:
         st.image(emoticonedofus, width=300) 
 
-    st.markdown("Récapitulatif :")
-    recap = {"Niveau de départ" : niv_depart, "Nombre de niveau(x) gagné(s)" : lvl_gagnes, "Niveau atteint" : niv_actuel, "Experience gagnée" : total_exp}
+    st.markdown("Récapitulatif :") #Récapitulatif des données traitées et obtenues dans un tableau pour faciliter le partage de l'information
+    recap = {"Niveau de départ" : niv_depart, "Nombre de niveau(x) gagné(s)" : lvl_gagnes, "Niveau atteint" : niv_actuel, "Expérience gagnée" : total_exp}
     recap= pd.DataFrame(list(recap.items()), columns=["Détail", "Valeurs"]) 
 
     st.dataframe(recap)
+
 
 
 
