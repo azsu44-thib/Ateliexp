@@ -1148,7 +1148,7 @@ bucheron = {
 app_mode = st.sidebar.selectbox('Sélectionne la page :', ['Menu', 'Optimiseur', 'Simulateur'])
 
 if app_mode == 'Menu':
-     col1, col2, col3 = st.columns([1,2,1])
+     col1, col2, col3 = st.columns([1,1,1])
      with col2 :
           st.image(icone)
      st.title("Bienvenue sur L'Ateliexp, ton simulateur et optimisateur de leveling métier DOFUS !")
@@ -1171,7 +1171,7 @@ if app_mode == 'Menu':
 
 
 if app_mode == 'Optimiseur':
-    col1, col2, col3 = st.columns([1,2,1])
+    col1, col2, col3 = st.columns([1,1,1])
     with col2:
         st.image(icone, width=450)
 
@@ -1299,7 +1299,7 @@ if app_mode == 'Optimiseur':
 
 if app_mode == 'Simulateur':
 
-    col1, col2, col3 = st.columns([1,2,1])
+    col1, col2, col3 = st.columns([1,1,1])
     with col2:
         st.image(icone, width=450)
 
@@ -1384,6 +1384,7 @@ if app_mode == 'Simulateur':
     recap= pd.DataFrame(list(recap.items()), columns=["Détail", "Valeurs"]) 
 
     st.dataframe(recap)
+
 
 
 
